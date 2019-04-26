@@ -104,7 +104,8 @@ This dataset is from about 100 speech files and has 1,000 unique events.
 ## Future things to do
 1. add in sed_vis library for annotation and playback (for scientific publications) 
 2. format the annotation process in the format of sed_vis so that any annotation session can be visualized well 
-3. be able to prospectively deploy machine learning models to make predictions via sed_vis visualization library (100 ms windows, break up + make predictions, export .CSV and then display predictions vs. actual results). 
+3. Allow for random length selection for data augmentation purposes (new feature). 
+4. be able to prospectively deploy machine learning models to make predictions via sed_vis visualization library (100 ms windows, break up + make predictions, export .CSV and then display predictions vs. actual results). 
 
 ## Additional reading
 * [SwipesForScience](https://github.com/SwipesForScience/SwipesForScience)
