@@ -22,6 +22,7 @@ pip3 install -r requirements.txt
 
 ## How to label
 
+### organizing data
 First, put all the audio files in the ./data folder. This will allow for the script to go through all these files and set a window (usually 20 milliseconds) to label these audio files. 
 
 Run the script with 
@@ -34,6 +35,9 @@ This will then ask you for a few things - like the number of classes.
 Then, all the files are segmented into windows and you can annotate each file. 
 
 What results is a .CSV annotation file for the entire length of the session.
+
+### settings 
+You can change a few settings with the .JSON file. (show table)
 
 ## Training machine learning models
 
