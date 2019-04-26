@@ -26,7 +26,7 @@ pip3 install -r requirements.txt
 Just put audio files in the ./data folder, run label_files.py, and then you're ready to get started labeling! 
 
 ### organizing data
-First, put all the audio files in the ./data folder. This will allow for the script to go through all these files and set a window (usually 20 milliseconds) to label these audio files. 
+First, put all the audio files in the ./data folder. This will allow for the script to go through all these files and set a window (usually 20 milliseconds) to label these audio files. Note that all the audio files in this folder must be uniquely named (e.g. 1.wav, 2.wav, etc.).
 
 ### labeling data 
 Run the script with 
