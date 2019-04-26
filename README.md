@@ -147,6 +147,11 @@ A machine learning model is then trained on all the data provided in each folder
 ### making predictions on new files 
 You can then easily deploy this machine learning model on new audio files. 
 
+### applying pre-trained models
+If instead you'd like to use some pre-trained models, you can use the ones included in the ./models directory. Here is an overview of all the current models and their accuracies.
+
+Note many of these are overfitted on small datasets, so use these models at your own risk!! :) 
+
 ## Visualizing labels and predictions
  
 We can use a third-party library called [sed_vis](https://github.com/TUT-ARG/sed_vis) (MIT licensed) to visualize annotated files. I've created a modification script that uses argv[] to pass through the .CSV file label and the audio file so that it works in this interface.
@@ -160,24 +165,8 @@ To visualize the files, all you need to do is run argv[].
 ## Datasets generated with script
 
 Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emotions].
-
-### silence vs. speech detection
-This dataset is from about 100 speech files and has 1,000 unique events. 
-
-### music events.
-1,000 samples.
-
-### silence events.
-1,000 samples.
-
-### noise events.
-1,000 samples.
-
-### phonemes 
-1,000 samples in each category.
-
-## FAQs
-* do you have overlapping window options? --> currently, no. But this is something we're working on.
+* [pause length detection]()
+* [emotion analayis]()
 
 ## Future things to do
 1. add in sed_vis library for annotation and playback (for scientific publications) 
