@@ -1,5 +1,5 @@
 # acoustic_event_detection
-A repository to manually annotate audio files and build machine learning models from these labels.
+A repository for manually annotating files to create labeled acoustic datasets for machine learning.
 
 ![](https://media.giphy.com/media/vybWlRniCXzZC/giphy.gif)
 
