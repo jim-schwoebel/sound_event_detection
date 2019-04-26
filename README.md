@@ -82,7 +82,7 @@ After you finish annotating the file, the windowed events are then automatically
 
 ![](https://github.com/jim-schwoebel/acoustic_event_detection/blob/master/sed_vis/visualizers/Screen%20Shot%202019-04-26%20at%2011.33.31%20AM.png)
 
-What results is a .CSV annotation file for the entire length of the session in the ./processed/ folder along with the base audio file (e.g. 'fast.wav'). See below for the example annotation. This annotation is necessary for visualizing the file later (the 0.80 probability here can be changed to whatever probability in the script). 
+What results is a .CSV annotation file for the entire length of the session in the ./processed/ folder along with the base audio file (e.g. 'fast.wav'). See below for the example annotation. This annotation is necessary for visualizing the file later (the 0.80 probability here can be changed in the settings.json to other values). 
 
 ```
 filename	onset	offset	event_label	probability
