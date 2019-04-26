@@ -109,7 +109,7 @@ fast.wav	9	9.5	speech	0.8
 ```
 
 ### settings 
-You can change a few settings with the .JSON file. (show table)
+You can change a few settings with the .JSON file. You can edit these manually by changing the settings.json file. Note that for most speech recognition problems, the ideal window is 0.20 seconds (or 20 milliseconds), which is the default window used in this repository.
 
 | Setting (Variable)   | Description  | Possible values     |  Default value     |
 | ------------- | ---------- | ----------- | ----------- |
