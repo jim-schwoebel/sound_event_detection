@@ -39,9 +39,34 @@ This will then ask you for a few things - like the number of classes. Then, all 
 
 ![](https://github.com/jim-schwoebel/acoustic_event_detection/blob/master/sed_vis/visualizers/Screen%20Shot%202019-04-26%20at%2011.30.37%20AM.png)
 
-After you finish annotating the file, the windowed events are then automatically sorted into the right folders (in the ./data/ directory). 
+After you finish annotating the file, the windowed events are then automatically sorted into the right folders (in the ./data/ directory). In this case, the 0.50 second serial snippets are in the 'speech' and 'silence' directory - all from 1 file (fast.wav). If you had multiple audio files, all the audio file windows would be sorted into these folders to easily prepare these files for machine learning.
 
-What results is a .CSV annotation file for the entire length of the session.
+![](https://github.com/jim-schwoebel/acoustic_event_detection/blob/master/sed_vis/visualizers/Screen%20Shot%202019-04-26%20at%2011.33.31%20AM.png)
+
+What results is a .CSV annotation file for the entire length of the session in the ./processed/ folder along with the base audio file (e.g. 'fast.wav'). See below for the example annotation. This annotation is necessary for visualizing the file later (the 0.80 probability here can be changed to whatever probability in the script). 
+
+```
+filename	onset	offset	event_label	probability
+fast.wav	0	0.5	silence	0.8
+fast.wav	0.5	1	speech	0.8
+fast.wav	1	1.5	speech	0.8
+fast.wav	1.5	2	speech	0.8
+fast.wav	2	2.5	speech	0.8
+fast.wav	2.5	3	speech	0.8
+fast.wav	3	3.5	speech	0.8
+fast.wav	3.5	4	speech	0.8
+fast.wav	4	4.5	speech	0.8
+fast.wav	4.5	5	speech	0.8
+fast.wav	5	5.5	speech	0.8
+fast.wav	5.5	6	speech	0.8
+fast.wav	6	6.5	speech	0.8
+fast.wav	6.5	7	speech	0.8
+fast.wav	7	7.5	speech	0.8
+fast.wav	7.5	8	speech	0.8
+fast.wav	8	8.5	speech	0.8
+fast.wav	8.5	9	speech	0.8
+fast.wav	9	9.5	speech	0.8
+```
 
 ### settings 
 You can change a few settings with the .JSON file. (show table)
