@@ -28,6 +28,7 @@ Just put audio files in the ./data folder, run label_files.py, and then you're r
 ### organizing data
 First, put all the audio files in the ./data folder. This will allow for the script to go through all these files and set a window (usually 20 milliseconds) to label these audio files. 
 
+### labeling data 
 Run the script with 
 ```
 cd ~
