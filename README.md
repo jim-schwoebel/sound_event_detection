@@ -43,6 +43,8 @@ We can use a third-party library called [sed_vis](https://github.com/TUT-ARG/sed
 
 To visualize the files, all you need to do is run argv[]. 
 
+![](https://github.com/jim-schwoebel/acoustic_event_detection/blob/master/sed_vis/visualizers/Figure_1.png)
+
 ## Datasets generated with script
 
 Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emotions].
