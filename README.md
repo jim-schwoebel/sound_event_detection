@@ -39,8 +39,9 @@ What results is a .CSV annotation file for the entire length of the session.
 ### settings 
 You can change a few settings with the .JSON file. (show table)
 
-## Training machine learning models
+## Using machine learning models
 
+### training machine learning models from labels 
 You can train a machine learning model easily by running the train_audioTPOT.py script.
 
 ```
@@ -56,7 +57,12 @@ What is the name of class 1? --> silence
 What is the name of class 2? --> speech
 ```
 
-After this, all the audio files will be featurized with the librosa_featurizing embedding and modeled using [TPOT](https://epistasislab.github.io/tpot/), an AutoML package. Note that much of this code base is from the [Voicebook repository: chapter_4_modeling](https://github.com/jim-schwoebel/voicebook/tree/master/chapter_4_modeling).
+After this, all the audio files will be featurized with the librosa_featurizing embedding and modeled using [TPOT](https://epistasislab.github.io/tpot/), an AutoML package. Note that much of this code base is from the [Voicebook repository: chapter_4_modeling](https://github.com/jim-schwoebel/voicebook/tree/master/chapter_4_modeling). In this scenario, 25% of the data is left out for cross-validation. 
+
+A machine learning model is then trained on all the data provided in each folder in the ./data directory. Note that if you properly named the classes with label_files.py, then the classes should align (e.g. if you labeled two classes, speech and silence, you can train two classes, silence and speech). 
+
+### making predictions on new files 
+You can then easily deploy this machine learning model on new audio files. 
 
 ## Visualizing labels and predictions
  
