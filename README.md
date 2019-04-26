@@ -37,7 +37,11 @@ What results is a .CSV annotation file for the entire length of the session.
 
 ## How to use machine learning models for visualization
 
-We can use a third-party library (MIT licensed) to visualize annotated files. To visualize the files, all you need to do is run argv[]. 
+We can use a third-party library called [sed_vis](https://github.com/TUT-ARG/sed_vis) (MIT licensed) to visualize annotated files. I've created a modification script that uses argv[] to pass through the .CSV file label and the audio file so that it works in this interface.
+
+- output visualizations
+
+To visualize the files, all you need to do is run argv[]. 
 
 ## Datasets generated with script
 
