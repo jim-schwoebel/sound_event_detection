@@ -18,6 +18,7 @@ Now, clone the repository and install all require dependencies:
 ```
 cd ~
 git clone git@github.com:jim-schwoebel/acoustic_event_detection.git
+cd acoustic_event_detection
 pip3 install -r requirements.txt
 ```
 
