@@ -117,11 +117,12 @@ else:
 	probability_default = g['probability_default']
 	probability_labeltype = g['probability_labeltype']
 	timesplit=g['timesplit']
-	if timesplit == 'random':
-		# select a random time between 20 and 1000 milliseconds (or 0.20 and 1 seconds)
-		timesplit=g=random.randint(20,1000)/1000
-
 	visualize_feature = g['visualize_feature']
+
+# make timesplit random if setting is chosen
+# select a random time between 20 and 1000 milliseconds (or 0.20 and 1 seconds)
+if timesplit == 'random':
+	timesplit=g=random.randint(20,1000)/1000
 
 ###########################################################
 ## 		    	Helper functions					     ##
