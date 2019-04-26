@@ -109,7 +109,7 @@ fast.wav	9	9.5	speech	0.8
 ```
 
 ### changing default settings 
-You can change a few settings with the .JSON file. You can edit these manually by changing the settings.json file. Note that for most speech recognition problems, a good window for humans to hear and annotate is 0.20 seconds (or 200 milliseconds), which is the default window used in this repository.
+You can change a few settings with the SETTINGS.JSON file. Note that for most speech recognition problems, a good window for humans to hear and annotate is 0.20 seconds (or 200 milliseconds), which is the default window used in this repository.
 
 | Setting (Variable)   | Description  | Possible values     |  Default value     |
 | ------------- | ---------- | ----------- | ----------- |
