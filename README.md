@@ -1,6 +1,8 @@
 # acoustic_event_detection
 A repository for manually annotating files for creating labeled acoustic datasets for machine learning.
 
+Just put audio files in the ./data folder, run label_files.py, and then you're ready to get started labeling! 
+
 ![](https://media.giphy.com/media/vybWlRniCXzZC/giphy.gif)
 
 ## How to get started
