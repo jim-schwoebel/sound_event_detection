@@ -35,9 +35,11 @@ cd acoustic_event_detection
 python3 label_files.py
 ```
 
-This will then ask you for a few things - like the number of classes. 
+This will then ask you for a few things - like the number of classes. Then, all the files are segmented into windows and you can annotate each file. In the example below, 19 files are created (@ 0.50 second windows for a 10 second speech file).
 
-Then, all the files are segmented into windows and you can annotate each file. 
+![](https://github.com/jim-schwoebel/acoustic_event_detection/blob/master/sed_vis/visualizers/Screen%20Shot%202019-04-26%20at%2011.30.37%20AM.png)
+
+After you finish annotating the file, the windowed events are then automatically sorted into the right folders (in the ./data/ directory). 
 
 What results is a .CSV annotation file for the entire length of the session.
 
