@@ -113,12 +113,12 @@ You can change a few settings with the .JSON file. (show table)
 
 | Setting (Variable)   | Description  | Possible values     |  Default value     |
 | ------------- | ---------- | ----------- | ----------- |
-| timesplit | The window to splice audio by for object detection. If random splicing, the audio will randomly select an interval between 0.20 and 10 seconds (allows for data augmentation). | 0.20-60 or 'random' | 0.20 |
 | overlapping  | Determines whether or not to use overlapping windows for splicing. | True or False | False |
 | plot_feature | Allows for the ability to plot spectrograms while labeling (8 visuals). | True or False | False |
-| visualize_feature | Allows for the ability to plot events after labeling each audio file. | True or False | False |
-| probability_labeltype | Allows for you to automatically or manually label files with probability of events occuring. If True, it is automatic; if False, it's manually annotated. | True or False | True |
 | probability_default | Sets the default probability amount (only useful if probability_labeltype == True) for each labeled session. | 0.0-1.0 | 0.80 | 
+| probability_labeltype | Allows for you to automatically or manually label files with probability of events occuring. If True, it is automatic; if False, it's manually annotated. | True or False | True |
+| timesplit | The window to splice audio by for object detection. If random splicing, the audio will randomly select an interval between 0.20 and 10 seconds (allows for data augmentation). | 0.20-60 or 'random' | 0.20 |
+| visualize_feature | Allows for the ability to plot events after labeling each audio file. | True or False | False |
 
 ## Using machine learning models
 
