@@ -1,0 +1,1 @@
+{"model name": "silence_speech_tpotclassifier.pickle", "accuracy": 1.0, "model type": "TPOTclassification_exported_pipeline = RandomForestClassifier(bootstrap=False, criterion=\"entropy\", max_features=0.45, min_samples_leaf=4, min_samples_split=9, n_estimators=100)\n\n"}
