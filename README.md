@@ -46,8 +46,8 @@ You can change a few settings with the .JSON file. (show table)
 | ------------- | ---------- | ----------- | ----------- |
 | timesplit | The window to splice audio by for object detection. | 0.20-60 | 0.20 |
 | overlapping  | Determines whether or not to use overlapping windows for splicing. | True or False | False |
-| plot_feature | Allows for the ability to plot spectrograms while labeling (8 visuals) | True or False | False |
-| visualize_feature | Allows for the ability to plot events after labeling each audio file | True or False | False |
+| plot_feature | Allows for the ability to plot spectrograms while labeling (8 visuals). | True or False | False |
+| visualize_feature | Allows for the ability to plot events after labeling each audio file. | True or False | False |
 
 ## Using machine learning models
 
