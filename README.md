@@ -35,9 +35,48 @@ cd acoustic_event_detection
 python3 label_files.py
 ```
 
-This will then ask you for a few things - like the number of classes. Then, all the files are segmented into windows and you can annotate each file. In the example below, 19 files are created (@ 0.50 second windows for a 10 second speech file).
+This will then ask you for a few things - like the number of classes. Then, all the files are segmented into windows and you can annotate each file. In the example below, 19 files are created (@ 0.50 second windows for a 10 second speech file). See an example terminal session below.
 
-![](https://github.com/jim-schwoebel/acoustic_event_detection/blob/master/sed_vis/visualizers/Screen%20Shot%202019-04-26%20at%2011.30.37%20AM.png)
+```
+how many classes do you want? (leave blank for 2) 
+2
+what is class 1? 
+silence
+what is class 2? 
+speech
+making fast_0.wav
+making fast_1.wav
+making fast_2.wav
+making fast_3.wav
+making fast_4.wav
+making fast_5.wav
+making fast_6.wav
+making fast_7.wav
+making fast_8.wav
+making fast_9.wav
+making fast_10.wav
+making fast_11.wav
+making fast_12.wav
+making fast_13.wav
+making fast_14.wav
+making fast_15.wav
+making fast_16.wav
+making fast_17.wav
+making fast_18.wav
+
+fast_0.wav:
+
+ File Size: 16.0k     Bit Rate: 257k
+  Encoding: Signed PCM    
+  Channels: 1 @ 16-bit   
+Samplerate: 16000Hz      
+Replaygain: off         
+  Duration: 00:00:00.50  
+
+In:100%  00:00:00.50 [00:00:00.00] Out:22.0k [      |      ]        Clip:0    
+Done.
+silence (0) or speech (1)?  0
+```
 
 After you finish annotating the file, the windowed events are then automatically sorted into the right folders (in the ./data/ directory). In this case, the 0.50 second serial snippets are in the 'speech' and 'silence' directory - all from 1 file (fast.wav). If you had multiple audio files, all the audio file windows would be sorted into these folders to easily prepare these files for machine learning.
 
