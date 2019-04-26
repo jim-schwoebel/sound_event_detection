@@ -41,6 +41,23 @@ You can change a few settings with the .JSON file. (show table)
 
 ## Training machine learning models
 
+You can train a machine learning model easily by running the train_audioTPOT.py script.
+
+```
+python3 train_audioTPOT.py
+```
+
+You will then be prompted for a few things:
+
+```
+Is this a classification (c) or regression (r) problem? --> c
+How many classes do you want to train? --> 2 
+What is the name of class 1? --> silence
+What is the name of class 2? --> speech
+```
+
+After this, all the audio files will be featurized with the librosa_featurizing embedding and modeled using [TPOT](https://epistasislab.github.io/tpot/), an AutoML package. Note that much of this code base is from the [Voicebook repository: chapter_4_modeling](https://github.com/jim-schwoebel/voicebook/tree/master/chapter_4_modeling).
+
 ## Visualizing labels and predictions
  
 We can use a third-party library called [sed_vis](https://github.com/TUT-ARG/sed_vis) (MIT licensed) to visualize annotated files. I've created a modification script that uses argv[] to pass through the .CSV file label and the audio file so that it works in this interface.
