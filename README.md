@@ -174,3 +174,4 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 
 ## Additional reading
 * [SwipesForScience](https://github.com/SwipesForScience/SwipesForScience)
+* [sed_vis](https://github.com/TUT-ARG/sed_vis)
