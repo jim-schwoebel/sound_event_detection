@@ -16,7 +16,7 @@ brew install python3 sox ffmpeg
 Now, clone the repository and install all require dependencies:
 
 ```
-git clone --recurse-submodules -j8 git@github.com:jim-schwoebel/acoustic_event_detection.git
+git clone git@github.com:jim-schwoebel/acoustic_event_detection.git
 pip3 install -r requirements.txt
 ```
 
