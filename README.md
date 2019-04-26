@@ -35,8 +35,10 @@ Then, all the files are segmented into windows and you can annotate each file.
 
 What results is a .CSV annotation file for the entire length of the session.
 
-## How to use machine learning models for visualization
+## Training machine learning models
 
+## Visualizing labels and predictions
+ 
 We can use a third-party library called [sed_vis](https://github.com/TUT-ARG/sed_vis) (MIT licensed) to visualize annotated files. I've created a modification script that uses argv[] to pass through the .CSV file label and the audio file so that it works in this interface.
 
 - output visualizations
@@ -65,7 +67,6 @@ This dataset is from about 100 speech files and has 1,000 unique events.
 1,000 samples in each category.
 
 ## FAQs
-
 * do you have overlapping window options? --> currently, no. But this is something we're working on.
 
 ## Future things to do
