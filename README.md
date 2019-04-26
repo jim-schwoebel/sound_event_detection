@@ -44,7 +44,7 @@ You can change a few settings with the .JSON file. (show table)
 
 | Setting (Variable)   | Description  | Possible values     |  Default value     |
 | ------------- | ---------- | ----------- | ----------- |
-| timesplit | The window to splice audio by for object detection. | 0.20-60 or 'random' | 0.20 |
+| timesplit | The window to splice audio by for object detection. If random splicing, the audio will randomly be split between 0.20 seconds and 1 second (allows for data augmentation) | 0.20-60 or 'random' | 0.20 |
 | overlapping  | Determines whether or not to use overlapping windows for splicing. | True or False | False |
 | plot_feature | Allows for the ability to plot spectrograms while labeling (8 visuals). | True or False | False |
 | visualize_feature | Allows for the ability to plot events after labeling each audio file. | True or False | False |
