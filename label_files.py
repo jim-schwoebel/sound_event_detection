@@ -1,8 +1,58 @@
 '''
-Label_files.py 
+================================================ 
+          ACOUSTIC_EVENT_DETECTION REPOSITORY                     
+================================================ 
 
-Label files according to N number of classes with labels.
+repository name: acoustic_event_detection 
+repository version: 1.0 
+repository link: https://github.com/jim-schwoebel/acoustic_event_detection 
+author: Jim Schwoebel 
+author contact: js@neurolex.co 
+description: 🎵 A repository for manually annotating files for creating labeled acoustic datasets for machine learning. 
+license category: opensource 
+license: Apache 2.0 license 
+organization name: NeuroLex Laboratories, Inc. 
+location: Seattle, WA 
+website: https://neurolex.ai 
+release date: 2019-04-26 
+
+This code (acoustic_event_detection) is hereby released under a Apache 2.0 license license. 
+
+For more information, check out the license terms below. 
+
+================================================ 
+                LICENSE TERMS                      
+================================================ 
+
+Copyright 2019 NeuroLex Laboratories, Inc. 
+Licensed under the Apache License, Version 2.0 (the "License"); 
+you may not use this file except in compliance with the License. 
+You may obtain a copy of the License at 
+
+     http://www.apache.org/licenses/LICENSE-2.0 
+
+Unless required by applicable law or agreed to in writing, software 
+distributed under the License is distributed on an "AS IS" BASIS, 
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+See the License for the specific language governing permissions and 
+limitations under the License. 
+
+================================================ 
+                SERVICE STATEMENT                    
+================================================ 
+
+If you are using the code written for a larger project, we are 
+happy to consult with you and help you with deployment. Our team 
+has >10 world experts in Kafka distributed architectures, microservices 
+built on top of Node.js / Python / Docker, and applying machine learning to 
+model speech and text data. 
+
+We have helped a wide variety of enterprises - small businesses, 
+researchers, enterprises, and/or independent developers. 
+
+If you would like to work with us let us know @ develop@neurolex.co. 
 '''
+
 ###########################################################
 ## 		    			Import statement 		         ##
 ###########################################################
@@ -17,21 +67,57 @@ import numpy as np
 ###########################################################
 ## 		    			Settings					     ##
 ###########################################################
-# time to split labeling sections on 
-# 0.20 = 0.20 seconds (or 20 milliseconds)
-timesplit=0.500
 
-# overlapping windows
-# True or False, allows for overlapping windows in labeling process
-overlapping=False
+# automatically set defaults if there are none and write Settings.JSON
+if 'settings.json' not in os.listdir():
+	# overlapping windows
+	# True or False, allows for overlapping windows in labeling process
+	overlapping=False
 
-# plot feature 
-# plots data segments when labeling (True or False)
-plot_feature=False
+	# plot feature 
+	# plots data segments when labeling (True or False)
+	plot_feature=False
 
-# visualize feature 
-# visualizes all the labeled events after audio labeling is complete for an audio file
-visualize_feature=True 
+	## probability default 
+	# Sets the default probability amount (only useful if probability_labeltype == True) 
+	# for each labeled session.
+	probability_default = 0.80
+
+	## probability labeltype
+	# Allows for you to automatically or manually label files with probability of events occuring. 
+	# If True, it is automatic; if False, it's manually annotated.
+	probability_labeltype = True
+
+	# time to split labeling sections on 
+	# 0.20 = 0.20 seconds (or 20 milliseconds)
+	timesplit=0.200
+
+	# visualize feature 
+	# visualizes all the labeled events after audio labeling is complete for an audio file
+	visualize_feature=True 
+
+	# write all these to .JSON for future use 
+	jsonfile=open('settings.json','w')
+	data={'overlapping': False,
+		  'plot_feature': False,
+		  'probability_default': 0.80,
+		  'probability_labeltype': True,
+		  'timesplit': 0.20,
+		  'visualize_feature': True}
+
+	json.dump(data,jsonfile)
+	jsonfile.close()
+
+else:
+	# load from memory if the file exists. Note the file should exist if you 
+	# cloned teh repository 
+	g=json.load(open('settings.json'))
+	overlapping = g['overlapping']
+	plot_feature = g['plot_feature']
+	probability_default = g['probability_default']
+	probability_labeltype = g['probability_labeltype']
+	timesplit=g['timesplit']
+	visualize_feature = g['visualize_feature']
 
 ###########################################################
 ## 		    	Helper functions					     ##
@@ -103,7 +189,7 @@ def visualize_sample(hostdir, audiofilename, csvfilename):
 	# thanks Audio Research Group, Tampere University! 
 	os.system("python3 %s '%s' '%s'"%(hostdir+'/sed_vis/visualize.py', hostdir+'/processed/'+audiofilename, hostdir+'/processed/'+csvfilename))
 
-def window_labeling(filename, classes, plot_feature):
+def window_labeling(filename, classes, plot_feature,probability_default, probability_labeltype):
 
 	os.system('play %s'%(filename))
 
@@ -128,10 +214,33 @@ def window_labeling(filename, classes, plot_feature):
 			break
 
 	# assume 80% probability + get start/stop from .json data
-	probability = .80 
+	if probability_labeltype == True:
+		probability = probability_default
+	elif probability_labeltype == False:
+		probability = input('what is the probability of this event (0.0-1.0).')
+		termination=False 
+		while termination==False:
+			try:
+				probability=float(probability)
+			except:
+				try:
+					probability = input('what is the probability of this event (0.0-1.0).')
+				except:
+					pass
+	else: 
+		# assume 0.80 if nothing is available
+		print('no probability given, assuming 0.80 probability...')
+		probability = probability_default
+
 	g=json.load(open(filename[0:-4]+'.json'))
 	start=g['start']
 	stop=g['end']
+
+	# if label does not exist, we can instantiate with n/a to not mess up visualization
+	try:
+		print(label)
+	except:
+		label='n/a'
 
 	return filename, start, stop, label, probability
 
@@ -212,6 +321,10 @@ def find_wavfiles(listdir):
 
 	return wavfiles
 
+###########################################################
+## 		    			MAIN SCRIPT					     ##
+###########################################################
+
 # make processed directory to store audio files 
 hostdir=os.getcwd()
 try:
@@ -284,7 +397,7 @@ for i in range(len(wavfiles)):
 
 		# now label these files and put them in the appropriate folder 
 		for k in range(len(wavfiles2)):
-			filename, start, stop, label_text, probability=window_labeling(wavfiles2[k], classes, plot_feature)
+			filename, start, stop, label_text, probability=window_labeling(wavfiles2[k], classes, plot_feature, probability_default, probability_labeltype)
 			filenames.append(wavfiles[i])
 			starts.append(start)
 			stops.append(stop)
@@ -314,7 +427,7 @@ for i in range(len(wavfiles)):
 	os.chdir(curdir)
 
 	# now delete all the temp folders (optional)
-	# shutil.rmtree(foldername)
+	shutil.rmtree(foldername)
 
 
 
