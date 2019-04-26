@@ -2,7 +2,6 @@ SpeechRecognition
 pocketsphinx 
 librosa
 pydub
-soundfile
 sounddevice 
 tpot
 numpy>=1.7.0
