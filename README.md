@@ -16,6 +16,7 @@ brew install python3 sox ffmpeg
 Now, clone the repository and install all require dependencies:
 
 ```
+cd ~
 git clone git@github.com:jim-schwoebel/acoustic_event_detection.git
 pip3 install -r requirements.txt
 ```
@@ -27,7 +28,9 @@ First, put all the audio files in the ./data folder. This will allow for the scr
 
 Run the script with 
 ```
-python3 acoustic_event_detection.py
+cd ~
+cd acoustic_event_detection
+python3 label_files.py
 ```
 
 This will then ask you for a few things - like the number of classes. 
@@ -45,6 +48,8 @@ You can change a few settings with the .JSON file. (show table)
 You can train a machine learning model easily by running the train_audioTPOT.py script.
 
 ```
+cd ~
+cd acoustic_event_detection
 python3 train_audioTPOT.py
 ```
 
