@@ -1,5 +1,5 @@
 # sound_event_detection
-A repository for manually annotating files to create labeled acoustic datasets for machine learning. This is known in the field as sound event detection (SED). 
+A repository for manually annotating audio files to create labeled datasets for machine learning. This is known in the field as sound event detection (SED). 
 
 ![](https://media.giphy.com/media/vybWlRniCXzZC/giphy.gif)
 
