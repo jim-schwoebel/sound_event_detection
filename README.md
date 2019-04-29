@@ -199,4 +199,5 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 ## Additional reading
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
 * [TPOT](https://epistasislab.github.io/tpot/)
-* [Voicebook](https://github.com/jim-schwoebel/voicebook)
+* [voicebook](https://github.com/jim-schwoebel/voicebook)
+* [youtube-scrape](https://github.com/jim-schwoebel/youtube_scrape)
