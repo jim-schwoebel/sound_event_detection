@@ -192,5 +192,6 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 2. add Youtube integration for data (e.g. download YouTube video or playlist via link + auto label).
 
 ## Additional reading
-* [SwipesForScience](https://github.com/SwipesForScience/SwipesForScience)
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
+* [TPOT](https://epistasislab.github.io/tpot/)
+* [Voicebook](https://github.com/jim-schwoebel/voicebook)
