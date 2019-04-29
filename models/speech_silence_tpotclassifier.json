@@ -1,1 +1,1 @@
-{"model name": "speech_silence_tpotclassifier.pickle", "accuracy": 1.0, "model type": "TPOTclassification_exported_pipeline = ExtraTreesClassifier(bootstrap=True, criterion=\"entropy\", max_features=0.3, min_samples_leaf=3, min_samples_split=2, n_estimators=100)\n\n"}
+{"model name": "speech_silence_tpotclassifier.pickle", "accuracy": 1.2, "model type": "TPOTclassification_exported_pipeline = ExtraTreesClassifier(bootstrap=True, criterion=\"entropy\", max_features=0.3, min_samples_leaf=3, min_samples_split=2, n_estimators=100)\n\n"}
