@@ -115,6 +115,7 @@ You can change a few settings with the SETTINGS.JSON file. Note that for most sp
 | Setting (Variable)   | Description  | Possible values     |  Default value     |
 | ------------- | ---------- | ----------- | ----------- |
 | overlapping  | Determines whether or not to use overlapping windows for splicing. | True or False | False |
+| model_feature | models data in the timesplit variable + plots onto .CSV file output | True or False | True | 
 | plot_feature | Allows for the ability to plot spectrograms while labeling (8 visuals). | True or False | False |
 | probability_default | Sets the default probability amount (only useful if probability_labeltype == True) for each labeled session. | 0.0-1.0 | 0.80 | 
 | probability_labeltype | Allows for you to automatically or manually label files with probability of events occuring. If True, the probability event metric is automatically computed with the probability_default value; if False, the probability event metric is manually annotated by the user. | True or False | True |
