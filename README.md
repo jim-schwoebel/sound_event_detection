@@ -197,6 +197,7 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 5. clean up readme and transfer most of this info to wiki. Use landing page to generate interest to star/clone.
 
 ## Other resources 
+* [pauses](https://github.com/jim-schwoebel/pauses)
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
 * [TPOT](https://epistasislab.github.io/tpot/)
 * [voicebook](https://github.com/jim-schwoebel/voicebook)
