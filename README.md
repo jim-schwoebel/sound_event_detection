@@ -170,7 +170,7 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 * [emotion analayis]()
 
 ## Future things to do
-1. add regression capabilities. 
+1. add regression capabilities {train_audioTPOT should allow for regression modeling and outputs}. 
 2. add Youtube integration for data (e.g. download YouTube video or playlist via link + auto label).
 
 ## Additional reading
