@@ -193,7 +193,7 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 1. debug why accuracy is coming out as 1.2 across all models instead of some (make better experience).
 2. make sure all files are mono for the visualization library.
 3. add regression capabilities {train_audioTPOT should allow for regression modeling and outputs}. 
-4. add Youtube integration for data (e.g. download YouTube video or playlist via link + auto label).
+4. add YouTube integration for data (e.g. download YouTube video or playlist via link + auto label).
 5. clean up readme and transfer most of this info to wiki. Use landing page to generate interest to star/clone.
 
 ## Additional reading
