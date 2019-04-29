@@ -17,8 +17,8 @@ Now, clone the repository and install all require dependencies:
 
 ```
 cd ~
-git clone git@github.com:jim-schwoebel/acoustic_event_detection.git
-cd acoustic_event_detection
+git clone git@github.com:jim-schwoebel/sound_event_detection.git
+cd sound_event_detection
 pip3 install -r requirements.txt
 ```
 
@@ -33,7 +33,7 @@ First, put all the audio files in the ./data folder. This will allow for the scr
 Run the script with 
 ```
 cd ~
-cd acoustic_event_detection
+cd sound_event_detection
 python3 label_files.py
 ```
 
@@ -129,7 +129,7 @@ You can train a machine learning model easily by running the train_audioTPOT.py 
 
 ```
 cd ~
-cd acoustic_event_detection
+cd sound_event_detection
 python3 train_audioTPOT.py
 ```
 
