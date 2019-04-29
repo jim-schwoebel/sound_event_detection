@@ -191,8 +191,9 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 
 ## Future things to do
 1. debug why accuracy is coming out as 1.2 across all models instead of some (make better experience).
-2. add regression capabilities {train_audioTPOT should allow for regression modeling and outputs}. 
-3. add Youtube integration for data (e.g. download YouTube video or playlist via link + auto label).
+2. make sure all files are mono for the visualization library.
+3. add regression capabilities {train_audioTPOT should allow for regression modeling and outputs}. 
+4. add Youtube integration for data (e.g. download YouTube video or playlist via link + auto label).
 
 ## Additional reading
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
