@@ -170,7 +170,8 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 * [emotion analayis]()
 
 ## Future things to do
-3. be able to prospectively deploy machine learning models to make predictions via sed_vis visualization library (100 ms windows, break up + make predictions, export .CSV and then display predictions vs. actual results). 
+1. add regression capabilities. 
+2. add Youtube integration for data (e.g. download YouTube video or playlist via link + auto label).
 
 ## Additional reading
 * [SwipesForScience](https://github.com/SwipesForScience/SwipesForScience)
