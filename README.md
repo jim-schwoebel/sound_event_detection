@@ -196,7 +196,7 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 4. add YouTube integration for data (e.g. download YouTube video or playlist via link + auto label).
 5. clean up readme and transfer most of this info to wiki. Use landing page to generate interest to star/clone.
 
-## Additional reading
+## Other resources 
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
 * [TPOT](https://epistasislab.github.io/tpot/)
 * [voicebook](https://github.com/jim-schwoebel/voicebook)
