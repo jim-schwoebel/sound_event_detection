@@ -158,11 +158,28 @@ Note many of these are overfitted on small datasets, so use these models at your
  
 We can use a third-party library called [sed_vis](https://github.com/TUT-ARG/sed_vis) (MIT licensed) to visualize annotated files. I've created a modification script that uses argv[] to pass through the .CSV file label and the audio file so that it works in this interface.
 
-- output visualizations
+To visualize the files, all you need to do is place the audio file in the ./data folder (and assuming you already have a labeled file known as test.csv with an audio file test.wav - these will be generate with label.py), you can run
 
-To visualize the files, all you need to do is run argv[]. 
+```
+cd ~
+cd sound_event_detection
+python3 ./sed_vis/visualize.py ./processed/test.wav ./processed/test.csv
+```
+
+What will result will be a visualization like this with all the annotated sound events.
 
 ![](https://github.com/jim-schwoebel/acoustic_event_detection/blob/master/sed_vis/visualizers/Figure_1.png)
+
+You can just change the command slightly to visualize all the machine learning models in the ./models directory as well. All you need to do is change the .CSV reference here (e.g. usually it's filename_2.csv):
+```
+cd ~
+cd sound_event_detection
+python3 ./sed_vis/visualize.py ./processed/test.wav ./processed/test_2.csv"
+```
+
+![](https://github.com/jim-schwoebel/acoustic_event_detection/blob/master/sed_vis/visualizers/Figure_2.png)
+
+With this machine learning visualization, you can better hear how machine learning models are under- or over-fitted and augment datasets, as necessary, for machine learning training.
 
 ## Datasets generated with script
 
