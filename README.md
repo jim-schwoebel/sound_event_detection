@@ -194,6 +194,7 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 2. make sure all files are mono for the visualization library.
 3. add regression capabilities {train_audioTPOT should allow for regression modeling and outputs}. 
 4. add Youtube integration for data (e.g. download YouTube video or playlist via link + auto label).
+5. clean up readme and transfer most of this info to wiki. Use landing page to generate interest to star/clone.
 
 ## Additional reading
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
