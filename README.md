@@ -147,7 +147,9 @@ After this, all the audio files will be featurized with the librosa_featurizing 
 A machine learning model is then trained on all the data provided in each folder in the ./data directory. Note that if you properly named the classes with label_files.py, then the classes should align (e.g. if you labeled two classes, speech and silence, you can train two classes, silence and speech). 
 
 ### making predictions on new files 
-You can then easily deploy this machine learning model on new audio files. 
+You can then easily deploy this machine learning model on new audio files using the load_audioTPOT script.
+
+
 
 ### applying pre-trained models
 If instead you'd like to use some pre-trained models, you can use the ones included in the ./models directory. Here is an overview of all the current models and their accuracies.
@@ -188,8 +190,9 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 * [emotion analayis]()
 
 ## Future things to do
-1. add regression capabilities {train_audioTPOT should allow for regression modeling and outputs}. 
-2. add Youtube integration for data (e.g. download YouTube video or playlist via link + auto label).
+1. debug why accuracy is coming out as 1.2 across all models instead of some (make better experience).
+2. add regression capabilities {train_audioTPOT should allow for regression modeling and outputs}. 
+3. add Youtube integration for data (e.g. download YouTube video or playlist via link + auto label).
 
 ## Additional reading
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
