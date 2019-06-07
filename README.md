@@ -200,6 +200,7 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 If you're interested to learn more about voice compuitng, I highly encoursge you to check out thie [voicebook repository](https://github.com/jim-schwoebel/voicebook). This repo contains 200+ open source scripts to get started with voice computing.
 
 Here are some other libraries that may be of interest to learn more about sound event detection:
+* [auditok](https://github.com/amsehili/auditok#play-back-detections) 
 * [pauses](https://github.com/jim-schwoebel/pauses)
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
 * [TPOT](https://epistasislab.github.io/tpot/)
