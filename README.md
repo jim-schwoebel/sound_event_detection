@@ -201,6 +201,7 @@ If you're interested to learn more about voice compuitng, I highly encoursge you
 
 Here are some other libraries that may be of interest to learn more about sound event detection:
 * [auditok](https://github.com/amsehili/auditok#play-back-detections) 
+* [PSDS_eval](https://github.com/audioanalytic/psds_eval)
 * [pauses](https://github.com/jim-schwoebel/pauses)
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
 * [TPOT](https://epistasislab.github.io/tpot/)
