@@ -197,7 +197,7 @@ Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emo
 5. clean up readme and transfer most of this info to wiki. Use landing page to generate interest to star/clone.
 
 ## Other resources 
-If you're interested to learn more about voice compuitng, I highly encoursge you to check out thie [voicebook repository](https://github.com/jim-schwoebel/voicebook). This repo contains 200+ open source scripts to get started with voice computing.
+If you're interested to learn more about voice computing, I highly encoursge you to check out thie [Voicebook repository](https://github.com/jim-schwoebel/voicebook). This repo contains 200+ open source scripts to get started with voice computing.
 
 Here are some other libraries that may be of interest to learn more about sound event detection:
 * [auditok](https://github.com/amsehili/auditok#play-back-detections) 
