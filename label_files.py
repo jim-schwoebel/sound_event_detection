@@ -8,7 +8,7 @@ repository version: 1.0
 repository link: https://github.com/jim-schwoebel/acoustic_event_detection 
 author: Jim Schwoebel 
 author contact: js@neurolex.co 
-description: ðﾟﾎﾵ A repository for manually annotating files for creating labeled acoustic datasets for machine learning. 
+description: A repository for manually annotating files for creating labeled acoustic datasets for machine learning. 
 license category: opensource 
 license: Apache 2.0 license 
 organization name: NeuroLex Laboratories, Inc. 
@@ -202,7 +202,7 @@ def visualize_sample(hostdir, audiofilename, csvfilename):
 
 def window_labeling(filename, classes, plot_feature,probability_default, probability_labeltype):
 
-        os.system('play %s'%(filename))
+        os.system("play '%s'"%(filename))
 
         # plot only if requested.
         if plot_feature==True:
@@ -255,39 +255,49 @@ def window_labeling(filename, classes, plot_feature,probability_default, probabi
 
         return filename, start, stop, label, probability
 
-def exportfile(newAudio,time1,time2,filename,i):
+def exportfile(newAudio,time1,time2,filename,i, sr):
     #Exports to a wav file in the current path.
     newAudio2 = newAudio[time1:time2]
     g=os.listdir()
     if filename[0:-4]+'_'+str(i)+'.wav' in g:
         filename2=str(i)+'_segment'+'.wav'
         print('making %s'%(filename2))
-        newAudio2.export(filename2,format="wav")
+        newAudio2.export(filename2,format="wav", parameters=["-sample_rate", str(sr)])
     else:
         filename2=filename[0:-4]+'_'+str(i)+'.wav'
         print('making %s'%(filename2))
-        newAudio2.export(filename2, format="wav")
+        newAudio2.export(filename2, format="wav", parameters=["-sample_rate", str(sr)])
 
     return filename2 
 
-def create_csv(csvfilename, filenames, starts, stops, label_texts, probabilities):
+def create_csv(csvfilename, filenames, starts, stops, label_texts, probabilities, name_):
+        names=list()
+        segnums=list()
+        for i in range(len(filenames)):
+            names.append(name_)
+            segnums.append(i+1)
+            
         df = pd.DataFrame({'filename': filenames,
-                                           'onset': starts,
-                                           'offset': stops,
-                                           'event_label': label_texts,
-                                           'probability': probabilities})
-        df.to_csv(csvfilename)
+                            'segment_number': segnums, 
+                            'onset': starts,
+                            'offset': stops,
+                            'event_label': label_texts,
+                            'labeler': names,
+                            'probability': probabilities})
+
+        df.to_csv(csvfilename, index=False)
 
 def split_segments(filename, timesplit, overlapping):
     # recommend >0.20 seconds for timesplit 
     hop_length = 512
     n_fft=2048 
     y, sr = librosa.load(filename)
-    duration=float(librosa.core.get_duration(y))
+    duration=float(librosa.core.get_duration(y=y, sr=sr))
+    print(duration)
     
     #Now splice an audio signal into individual elements of 20 ms and extract
     segnum=round(duration/timesplit)
-    deltat=duration/segnum
+    deltat=timesplit
     timesegment=list()
     time=0
 
@@ -317,7 +327,7 @@ def split_segments(filename, timesplit, overlapping):
 
     # store time data / startstop in parallel to audio file 
     for i in range(len(timesegment)-1):
-        filename=exportfile(newAudio,timesegment[i],timesegment[i+1],file,i)
+        filename=exportfile(newAudio,timesegment[i],timesegment[i+1],file,i, sr)
         jsonfile=open(filename[0:-4]+'.json','w')
         data={'start':timesegment[i]/1000,
                   'end': timesegment[i+1]/1000}
@@ -350,6 +360,8 @@ listdir=os.listdir()
 curdir=os.getcwd()
 
 # get class labeled number from users
+name_=input('what is your name? (e.g. Jim) \n')
+
 classnum=input('how many classes do you want? (leave blank for 2) \n')
 
 while True:
@@ -430,7 +442,7 @@ for i in range(len(wavfiles)):
 
         # now create an output CSV file
         csvfilename=wavfiles[i][0:-4]+'.csv'
-        create_csv(csvfilename, filenames,starts,stops,label_texts,probabilities)
+        create_csv(csvfilename, filenames,starts,stops,label_texts,probabilities, name_)
         shutil.move(hostdir+'/data/'+foldername+'/'+csvfilename, hostdir+'/processed/'+csvfilename)
 
         if visualize_feature== True:
