@@ -183,19 +183,6 @@ python3 ./sed_vis/visualize.py ./processed/test.wav ./processed/test_2.csv"
 
 With this machine learning visualization, you can better hear how machine learning models are under- or over-fitted and augment datasets, as necessary, for machine learning training.
 
-## Datasets generated with script
-
-Datasets used: [AudioSet], the [Common Voice Project], [YouTube], and [train-emotions].
-* [pause length detection]()
-* [emotion analayis]()
-
-## Future things to do
-1. debug why accuracy is coming out as 1.2 across all models instead of some (make better experience).
-2. make sure all files are mono for the visualization library.
-3. add regression capabilities {train_audioTPOT should allow for regression modeling and outputs}. 
-4. add YouTube integration for data (e.g. download YouTube video or playlist via link + auto label).
-5. clean up readme and transfer most of this info to wiki. Use landing page to generate interest to star/clone.
-
 ## Other resources 
 If you're interested to learn more about voice computing, I highly encoursge you to check out thie [Voicebook repository](https://github.com/jim-schwoebel/voicebook). This repo contains 200+ open source scripts to get started with voice computing.
 
