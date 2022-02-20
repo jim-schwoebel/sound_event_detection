@@ -188,6 +188,7 @@ If you're interested to learn more about voice computing, I highly encoursge you
 
 Here are some other libraries that may be of interest to learn more about sound event detection:
 * [auditok](https://github.com/amsehili/auditok#play-back-detections) 
+* [pyannotate-core](https://github.com/pyannote/pyannote-core)
 * [PSDS_eval](https://github.com/audioanalytic/psds_eval)
 * [pauses](https://github.com/jim-schwoebel/pauses)
 * [sed_vis](https://github.com/TUT-ARG/sed_vis)
